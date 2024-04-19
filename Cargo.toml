@@ -1,0 +1,10 @@
+[package]
+name = "pep508_reproducer"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+uv-fs = { git = "https://github.com/astral-sh/uv", tag = "0.1.32" }
+pep508_rs = { git = "https://github.com/astral-sh/uv", tag = "0.1.32" }
