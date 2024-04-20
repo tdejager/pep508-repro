@@ -11,9 +11,10 @@ mod tests {
             split_scheme("file:///C:/path/to/my_pkg").unwrap().1,
         ));
         if let Some(VersionOrUrl::Url(url)) = spec.version_or_url {
-            let path = url.path();
-            assert_eq!(path, raw);
-            println!("{path} == {raw}");
+            let path = url.to_file_path().unwrap();
+            let path_str = path.to_str().unwrap();
+            assert_eq!(path_str, raw);
+            println!("{path_str} == {raw}");
         } else {
             assert!(false, "expected url. Found: {spec_str}");
         }
